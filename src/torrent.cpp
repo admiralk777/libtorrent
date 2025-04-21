@@ -3026,7 +3026,8 @@ namespace {
 		req.private_torrent = m_torrent_file->priv();
 
 		req.pid = m_peer_id;
-		req.downloaded = m_stat.total_payload_download() - m_total_failed_bytes;
+		//req.downloaded = m_stat.total_payload_download() - m_total_failed_bytes;
+		req.downloaded = 0;
 		req.uploaded = m_stat.total_payload_upload();
 		req.corrupt = m_total_failed_bytes;
 		req.left = value_or(bytes_left(), 16*1024);
